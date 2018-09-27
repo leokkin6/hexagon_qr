@@ -14,3 +14,30 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Routing by group
+Route::group(['prefix' => 'admin'], function (){
+	Route::get('dashboard', function (){
+		return view('pages/index');
+	});
+});
+
+/*
+//Routing 
+Route::get('dashboard', function () {
+	return "dashboard";
+});
+
+//Routing by group
+Route::group(['prefix' => 'admin'], function (){
+	Route::get('dashboard', function (){
+		return "dashboard";
+	});
+
+	Route::get('shit', function (){
+		return "shetness";
+	});
+});
+
+*/
+
