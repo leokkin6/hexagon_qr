@@ -1,6 +1,11 @@
 @extends('main')
 
+@section('title','| Gatekeeper')
+@section('content_header','Surveillance')
+@section('breadcrumb','Gatekeeper')
+
 @section('content')
+<div class="page-body">
                 <!-- Cards -->
                 <div class="row">
                     <!-- table card start -->
@@ -667,4 +672,6 @@
                     </div> 
                 </div>
             </div>
+    </div>
+</div>
 @endsection
