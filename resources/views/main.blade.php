@@ -4,7 +4,7 @@
         @include('partials._head')
     </head>
     
-<body class="horizontal-fixed">
+<body class="horizontal-icon-fixed">
 
     @include('partials._nav')
 
