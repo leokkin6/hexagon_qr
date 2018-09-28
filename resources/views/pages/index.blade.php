@@ -1,5 +1,4 @@
 @extends('main')
-@extends('pages.menu_aside')
 
 @section('content')
                 <!-- Cards -->
