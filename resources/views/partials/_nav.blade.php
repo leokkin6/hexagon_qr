@@ -305,31 +305,31 @@
         </div>
         <div class="main-menu-content" style="width: auto;">
                 <ul class="main-navigation">
-                    <li class="nav-item has-class">
+                    <li class="nav-item {{ (current_page("admin/dashboard")) ? 'has-class' : '' }} ">
                         <a href="/admin/dashboard">
                             <i class="ti-home"></i>
                             <span>Monitoring</span>
                         </a>
                     <ul class="tree-1 open">
-                        <li class="has-class"><a href="/admin/dashboard">Gatekeeper</a></li>
-                        <li><a href="/admin/dashboard">Statistics</a></li>
+                        <li class="{{ (current_page("admin/dashboard")) ? 'has-class' : '' }}"><a href="/admin/dashboard">Gatekeeper</a></li>
+                        <li class="{{ (current_page("admin/dashboard")) ? 'has-class' : '' }}"><a href="/admin/dashboard">Statistics</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item {{ (current_page("admin/user_access")) ? 'has-class' : '' }} ">
                     <a href="#!">
                         <i class="icofont icofont-ssl-security"></i>
                         <span>Security</span>
                     </a>
                     <ul class="tree-1">
-                        <li class="nav-sub-item"><a href="#">User Access</a>
+                        <li class="nav-sub-item {{ (current_page("admin/user_access/user_registration")) ? 'has-class' : '' }}"><a href="#">User Access</a>
                             <ul class="tree-2">
-                                <li><a href="/admin/registration" target="_blank">User Registration</a></li>
-                                <li><a href="../vertical-overlay/menu-header-fixed.html" target="_blank">User Role</a></li>
-                                <li><a href="../vertical-compact/menu-compact.html" target="_blank">User Access Level</a></li>
+                                <li class="{{ (current_page("admin/user_access/user_registration")) ? 'has-class' : '' }}"><a href="/admin/user_access/user_registration">User Registration</a></li>
+                                <li class="{{ (current_page("admin/user_access/user_role")) ? 'has-class' : '' }}"><a href="../vertical-overlay/menu-header-fixed.html">User Role</a></li>
+                                <li class="{{ (current_page("admin/user_access/user_accesslevel")) ? 'has-class' : '' }}"><a href="../vertical-compact/menu-compact.html">User Access Level</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">User Profile</a>
+                        <li class="{{ (current_page("admin/user_profile/registration")) ? 'has-class' : '' }}"><a href="#!">User Profile</a>
                         </li>
                         </li>
                     </ul>

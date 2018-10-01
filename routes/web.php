@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin'], function (){
 	Route::get('dashboard', function (){
 		return view('pages/index');
 	});
-	Route::get('registration', function (){
+	Route::get('user_access/user_registration', function (){
 		return view('pages/user_registration_form');
 	});
 });

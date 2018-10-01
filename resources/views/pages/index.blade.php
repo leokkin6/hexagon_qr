@@ -1,5 +1,6 @@
 @extends('main')
 
+@section('has-class','has-class')
 @section('title','| Gatekeeper')
 @section('content_header','Surveillance')
 @section('breadcrumb','Gatekeeper')
