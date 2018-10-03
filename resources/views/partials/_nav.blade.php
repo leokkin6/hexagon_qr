@@ -305,14 +305,14 @@
         </div>
         <div class="main-menu-content" style="width: auto;">
                 <ul class="main-navigation">
-                    <li class="nav-item {{ (current_page("admin/dashboard")) ? 'has-class' : '' }} ">
-                        <a href="/admin/dashboard">
+                    <li class="nav-item {{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }} ">
+                        <a href="/admin/gatekeeper">
                             <i class="ti-home"></i>
                             <span>Monitoring</span>
                         </a>
                     <ul class="tree-1 open">
-                        <li class="{{ (current_page("admin/dashboard")) ? 'has-class' : '' }}"><a href="/admin/dashboard">Gatekeeper</a></li>
-                        <li class="{{ (current_page("admin/dashboard")) ? 'has-class' : '' }}"><a href="/admin/dashboard">Statistics</a></li>
+                        <li class="{{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }}"><a href="/admin/gatekeeper">Gatekeeper</a></li>
+                        <li class="{{ (current_page("admin/statistics")) ? 'has-class' : '' }}"><a href="/admin/statistics">Statistics</a></li>
                     </ul>
                 </li>
 

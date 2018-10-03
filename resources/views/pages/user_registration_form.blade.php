@@ -82,6 +82,7 @@
                             <input type="text" class="form-control" placeholder="Input Email">
                         </div>
                     </div>
+                <!-- End of Information Forms -->
         	</div>
 
             <!-- Header RSection -->

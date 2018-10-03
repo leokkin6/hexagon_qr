@@ -19,12 +19,16 @@ Route::get('/', function () {
 
 //Routing by group
 Route::group(['prefix' => 'admin'], function (){
-	Route::get('dashboard', function (){
-		return view('pages/index');
+	Route::get('gatekeeper', function (){
+		return view('pages/gatekeeper');
+	});
+	Route::get('statistics', function (){
+		return view('pages/statistics');
 	});
 	Route::get('user_access/user_registration', function (){
 		return view('pages/user_registration_form');
 	});
+
 });
 
 /*

@@ -1,8 +1,9 @@
 @extends('main')
 
-@section('has-class','has-class')
+@section('has_class','has class')
 @section('title','| Gatekeeper')
 @section('content_header','Gatekeeper')
+@section('content_subheader','Monitoring and Entry Surveillance ')
 @section('breadcrumb','Gatekeeper')
 
 @section('content')
@@ -14,6 +15,37 @@
                     <!-- Header LSection -->
                     <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i> Employee Information</h4>
                     <!-- Information Forms -->
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">ID Number:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="00150-1702" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Leoner Nikko F. Bautista" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Department:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Information and Communication Technology" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Position:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Software Support Specialist" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Status:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-bg-success" placeholder="Active" >
+                        </div>
+                    </div>
+                    <!-- End of Information Forms -->
                 </div>
 
                 <div class="col-xs-3 col-md-6">
