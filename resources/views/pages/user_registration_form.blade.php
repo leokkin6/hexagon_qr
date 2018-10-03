@@ -86,7 +86,7 @@
 
             <!-- Header RSection -->
     		<div class="col-xs-3 col-md-5">
-            <h4 class="sub-title"><i class="icofont icofont-id-card"></i> Identification Photo</h4>
+                <h4 class="sub-title"><i class="icofont icofont-id-card"></i> Identification Photo</h4>
             <!-- Profile Card -->
                 <div class="col">
                         <div class="card rounded-card user-card">
