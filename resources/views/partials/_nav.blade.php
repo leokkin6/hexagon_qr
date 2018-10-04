@@ -303,13 +303,14 @@
                 <span id="more-details">UX Designer<i class="icon-arrow-down"></i></span>
             </div>
         </div>
+
         <div class="main-menu-content" style="width: auto;">
-                <ul class="main-navigation">
-                    <li class="nav-item {{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }} ">
-                        <a href="/admin/gatekeeper">
-                            <i class="ti-home"></i>
-                            <span>Monitoring</span>
-                        </a>
+            <ul class="main-navigation">
+                <li class="nav-item {{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }} ">
+                    <a href="/admin/gatekeeper">
+                        <i class="ti-home"></i>
+                        <span>Monitoring</span>
+                    </a>
                     <ul class="tree-1 open">
                         <li class="{{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }}"><a href="/admin/gatekeeper">Gatekeeper</a></li>
                         <li class="{{ (current_page("admin/statistics")) ? 'has-class' : '' }}"><a href="/admin/statistics">Statistics</a></li>
@@ -329,12 +330,26 @@
                                 <li class="{{ (current_page("admin/user_access/user_accesslevel")) ? 'has-class' : '' }}"><a href="../vertical-compact/menu-compact.html">User Access Level</a></li>
                             </ul>
                         </li>
-                        <li class="{{ (current_page("admin/user_profile/registration")) ? 'has-class' : '' }}"><a href="#!">User Profile</a>
-                        </li>
+                        <li class="{{ (current_page("admin/user_profile/registration")) ? 'has-class' : '' }}">     <a href="#!">User Profile</a>
                         </li>
                     </ul>
-                    </li>
+                </li>
+                
+                <li class="nav-item {{ (current_page("admin/qr_system")) ? 'has-class' : '' }} ">
+                    <a href="#!">
+                        <i class="icofont icofont-qr-code"></i>
+                        <span>QR System</span>
+                    </a>
+                    <ul class="tree-1">
+                        <li class="{{ (current_page("admin/qr_system/qr_scanner")) ? 'has-class' : '' }}"><a href="/admin/qr_system/qr_scanner">QR Scanner</a>
+                            
+                        <li class="{{ (current_page("admin/qr_system/qr_generator")) ? 'has-class' : '' }}">     <a href="/admin/qr_system/qr_generator">QR Generator</a>
+                        </li>
+                    </ul>
+                </li>        
+
             </ul>
         </div>
+
     </div>
     <!-- Menu aside end -->

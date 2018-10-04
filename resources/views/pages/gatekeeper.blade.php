@@ -102,8 +102,8 @@
                                     </div>
                                 </div>
                                 <div class="user-content">
-                                    <h4 class="">Cedric Kelly</h4>
-                                    <h5 class="">Network engineer</h5>
+                                    <h4 class="">Michael Fariolen</h4>
+                                    <h5 class="">Business Analyst</h5>
                                 </div>
                                 <ul class="icons-list mt-15">
                                     <li>
@@ -143,8 +143,8 @@
                                     </div>
                                 </div>
                                 <div class="user-content">
-                                    <h4 class="">Howard Hatfield</h4>
-                                    <h5 class="">UX/UI designer</h5>
+                                    <h4 class="">Kim Domingo</h4>
+                                    <h5 class="">System Administrator</h5>
                                 </div>
                             </div>
                         </div>
@@ -167,8 +167,8 @@
                                     </div>
                             </div>
                             <div class="user-content">
-                                <h4 class="">Jenette Caldwell</h4>
-                                <h5 class="">SEO specialist</h5>
+                                <h4 class="">Nikko Bautista</h4>
+                                <h5 class="">Software Support Specialist</h5>
                             </div>
                         </div>
                     </div>
@@ -191,8 +191,8 @@
                                     </div>
                                 </div>
                                 <div class="user-content">
-                                    <h4 class="">Hermione Butler</h4>
-                                    <h5 class="">Chief officer</h5>
+                                    <h4 class="">Allan Valenciano</h4>
+                                    <h5 class="">Software Support Specialist</h5>
                                 </div>
                             </div>
                         </div>

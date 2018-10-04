@@ -30,9 +30,18 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/dashboard/horizontal-timeline/css/style.css') }}">
     <!-- amchart css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/dashboard/amchart/css/amchart.css') }}">
+    
     <!-- flag icon framework css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/flag-icon/flag-icon.min.css') }}">
+
+    <!-- Data Table Css -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/data-table/css/buttons.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/data-table/extensions/select/css/select.dataTables.min.css') }}">
+    <script src="{{ URL::asset('assets/pages/data-table/extensions/select/js/select-custom.js') }}"></script>
+
     <!-- Style.css -->
      <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
     <!--color css-->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/color/color-1.css" id="color') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/color/color-1.css') }}" id="color"/>

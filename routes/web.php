@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/gatekeeper');
 });
 
 #Route::get('index','PagesController@getIndex')
@@ -27,6 +27,14 @@ Route::group(['prefix' => 'admin'], function (){
 	});
 	Route::get('user_access/user_registration', function (){
 		return view('pages/user_registration_form');
+	});
+
+	Route::get('qr_system/qr_generator', function (){
+		return view('pages/qr_generator');
+	});
+
+	Route::get('qr_system/qr_scanner', function (){
+		return view('pages/qr_scanner');
 	});
 
 });
