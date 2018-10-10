@@ -13,7 +13,7 @@
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
-    <link rel="icon" href=" {{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href=" {{ URL::asset('assets/images/hgc.ico') }}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -41,7 +41,16 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/data-table/extensions/select/css/select.dataTables.min.css') }}">
     <script src="{{ URL::asset('assets/pages/data-table/extensions/select/js/select-custom.js') }}"></script>
 
+    <!-- jpro forms css -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/demo.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/j-pro-modern.css') }}">
+
+
     <!-- Style.css -->
      <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
     <!--color css-->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/color/color-1.css') }}" id="color"/>
+
+    <!-- Google QR API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -31,3 +31,22 @@
     <!-- Custom js -->
     <script type="text/javascript" src="{{ URL::asset('assets/pages/dashboard/custom-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('assets/js/script.js') }}"></script>
+    
+    <!-- j-pro js -->
+    <script type="text/javascript" src="{{ URL::asset('assets/pages/j-pro/js/jquery.ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/pages/j-pro/js/jquery.maskedinput.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/pages/j-pro/js/jquery.j-pro.js') }}"></script>
+
+ 
+    <script>
+        function generate_qrcode(qr_system){
+            $.ajax({
+                type: 'post',
+                url: '/admin/qr_system/qr_generator',
+                data: {qr_system:qr_system},
+                success: function(qr){
+                    $('#result').html(qr);
+                }
+            });
+        }
+    </script>

@@ -11,18 +11,60 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/gatekeeper');
-});
+Route::get('/admin/monitoring/gatekeeper','PagesController@getGatekeeper');
+Route::get('/','PagesController@getGatekeeper');
+
+Route::get('/admin/qr_system/qr_generator','PagesController@getQRGenerator');
+Route::get('/admin/qr_system/qr_scanner','PagesController@getQRScanner');
+Route::get('/admin/monitoring/statistics','PagesController@getStatistics');
+Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Route::get('/', function () {
+#    return view('pages/gatekeeper');
+#});
 
 #Route::get('index','PagesController@getIndex')
 
+/*
 //Routing by group
 Route::group(['prefix' => 'admin'], function (){
-	Route::get('gatekeeper', function (){
+	Route::get('monitoring/gatekeeper', function (){
 		return view('pages/gatekeeper');
 	});
-	Route::get('statistics', function (){
+	Route::get('monitoring/statistics', function (){
 		return view('pages/statistics');
 	});
 	Route::get('user_access/user_registration', function (){
@@ -38,6 +80,8 @@ Route::group(['prefix' => 'admin'], function (){
 	});
 
 });
+
+*/
 
 /*
 //Routing 

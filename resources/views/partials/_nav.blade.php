@@ -18,7 +18,7 @@
                     <i class="ti-search"></i>
                 </a>
                 <a href="index.html">
-                    <img class="img-fluid" src=" {{ URL::asset('assets/images/system_logo.png')}}" alt="Theme-Logo" />
+                    <img class="img-fluid" src=" {{ URL::asset('assets/images/eov_logo.png')}}" alt="Theme-Logo" />
                 </a>
                 <a class="mobile-options">
                     <i class="ti-more"></i>
@@ -306,14 +306,14 @@
 
         <div class="main-menu-content" style="width: auto;">
             <ul class="main-navigation">
-                <li class="nav-item {{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }} ">
-                    <a href="/admin/gatekeeper">
+                <li class="nav-item {{ (current_page("admin/monitoring")) ? 'has-class' : '' }} ">
+                    <a href="/admin/monitoring/gatekeeper">
                         <i class="ti-home"></i>
                         <span>Monitoring</span>
                     </a>
                     <ul class="tree-1 open">
-                        <li class="{{ (current_page("admin/gatekeeper")) ? 'has-class' : '' }}"><a href="/admin/gatekeeper">Gatekeeper</a></li>
-                        <li class="{{ (current_page("admin/statistics")) ? 'has-class' : '' }}"><a href="/admin/statistics">Statistics</a></li>
+                        <li class="{{ (current_page("admin/monitoring/gatekeeper")) ? 'has-class' : '' }}"><a href="/admin/monitoring/gatekeeper">Gatekeeper</a></li>
+                        <li class="{{ (current_page("admin/monitoring/statistics")) ? 'has-class' : '' }}"><a href="/admin/monitoring/statistics">Statistics</a></li>
                     </ul>
                 </li>
 
