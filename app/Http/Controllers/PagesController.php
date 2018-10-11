@@ -18,8 +18,8 @@ class PagesController extends Controller
     public function getStatistics(){
     	return view('pages.statistics');
     }
-    public function getRegistration(){
+    /* public function getRegistration(){
     	return view('pages.user_registration_form');
-    }
+    } */
     
 }

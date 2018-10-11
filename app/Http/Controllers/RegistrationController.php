@@ -23,7 +23,7 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.user_registration_form');
     }
 
     /**

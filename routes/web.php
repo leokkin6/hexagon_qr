@@ -10,15 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/admin/monitoring/gatekeeper','PagesController@getGatekeeper');
 Route::get('/','PagesController@getGatekeeper');
-
+Route::get('/admin/monitoring/gatekeeper','PagesController@getGatekeeper');
 Route::get('/admin/qr_system/qr_generator','PagesController@getQRGenerator');
 Route::get('/admin/qr_system/qr_scanner','PagesController@getQRScanner');
 Route::get('/admin/monitoring/statistics','PagesController@getStatistics');
-Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
+#Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
 
+Route::resource('/admin/user_access/user_registration','RegistrationController');	
 
 
 
