@@ -16,6 +16,12 @@
                     <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i> Employee Information</h4>
                     <!-- Information Forms -->
                     <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Unit:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="407-00" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-sm-2 col-form-label">ID Number:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" placeholder="00150-1702" readonly="">
@@ -43,6 +49,12 @@
                         <label class="col-sm-2 col-form-label">Status:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control form-bg-success" placeholder="Active" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Last Entry:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="01/06/1994 01:05:00PM" readonly="">
                         </div>
                     </div>
                     <!-- End of Information Forms -->
@@ -104,6 +116,7 @@
                                 <div class="user-content">
                                     <h4 class="">Michael Fariolen</h4>
                                     <h5 class="">Business Analyst</h5>
+                                    <h6 class="">11:24:50 AM</h6>
                                 </div>
                                 <ul class="icons-list mt-15">
                                     <li>
@@ -145,6 +158,7 @@
                                 <div class="user-content">
                                     <h4 class="">Kim Domingo</h4>
                                     <h5 class="">System Administrator</h5>
+                                    <h6 class="">11:24:51 AM</h6>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +183,7 @@
                             <div class="user-content">
                                 <h4 class="">Nikko Bautista</h4>
                                 <h5 class="">Software Support Specialist</h5>
+                                <h6 class="">11:24:52 AM</h6>
                             </div>
                         </div>
                     </div>
@@ -193,6 +208,7 @@
                                 <div class="user-content">
                                     <h4 class="">Allan Valenciano</h4>
                                     <h5 class="">Software Support Specialist</h5>
+                                    <h6 class="">11:24:53 AM</h6>
                                 </div>
                             </div>
                         </div>
