@@ -12,6 +12,8 @@
     <meta name="description" content="Phoenixcoded">
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
+    
+                            <!-- General styles --> 
     <!-- Favicon icon -->
     <link rel="icon" href=" {{ URL::asset('assets/images/hgc.ico') }}" type="image/x-icon">
     <!-- Google font-->
@@ -19,38 +21,33 @@
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- themify icon -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/icon/themify-icons/themify-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/icon/themify-icons/themify-icons.css') }}"> 
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/icon/icofont/css/icofont.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/icon/icofont/css/icofont.css') }}"> 
     <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/flag-icon/flag-icon.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/flag-icon/flag-icon.min.css') }}"> 
     <!-- Menu-Search css -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/menu-search/css/component.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/menu-search/css/component.css') }}"> 
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
+    <!--color css-->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/color/color-1.css') }}" id="color"/>
+                            <!--End of General styles --> 
+
+    {{--
+    
     <!-- Horizontal-Timeline css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/dashboard/horizontal-timeline/css/style.css') }}">
     <!-- amchart css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/dashboard/amchart/css/amchart.css') }}">
     
     <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/flag-icon/flag-icon.min.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/flag-icon/flag-icon.min.css') }}"> 
+     
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/data-table/css/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/data-table/extensions/select/css/select.dataTables.min.css') }}">
     <script src="{{ URL::asset('assets/pages/data-table/extensions/select/js/select-custom.js') }}"></script>
-
-    <!-- jpro forms css -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/demo.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/pages/j-pro/css/j-pro-modern.css') }}">
-
-
-    <!-- Style.css -->
-     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
-    <!--color css-->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/color/color-1.css') }}" id="color"/>
-
-    <!-- Google QR API -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    --}}

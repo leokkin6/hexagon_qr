@@ -34,7 +34,23 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate the data
+        $this->validate($request, array(
+                'EmployeeID'=>'required|max:10',
+                'SystemUser'=>'required',
+                'LastName'=>'required',
+                'Title'=>'required',
+                'FirstName'=>'required',
+                'MiddleName'=>'required',
+                'Department'=>'required',
+                'Unit'=>'required',
+                'Division'=>'required',
+                'Position'=>'required',
+                'Email'=>'required|email'
+            ));
+        //store in the database
+
+        //redirect
     }
 
     /**

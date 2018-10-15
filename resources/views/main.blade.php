@@ -2,6 +2,8 @@
 <html lang="en">
     <head>
         @include('partials._head')
+
+        @yield('custom_page_style')
     </head>
     
 <body class="horizontal-icon-fixed">
@@ -17,6 +19,8 @@
     @include('partials._warnings')
 
     @include('partials._javascripts')
+
+    @yield('custom_page_script')
 
 </body>
 
