@@ -4,6 +4,7 @@
 @section('content_header','User Registration')
 @section('content_subheader','User registration for QR Access')
 @section('breadcrumb', 'User Registration')
+
  
 @section('content')
 <!--General Information Card-->
@@ -19,7 +20,7 @@
                 <div class="row">
                     <div class="form-group col-sm-9">
                         {{ Form::label('EmployeeID', 'Employee ID:') }}
-                        {{ Form::text('EmployeeID', null, array('class' => 'form-control', 'placeholder'=>'Employee ID')) }}
+                        {{ Form::text('EmployeeID', null, array('class' => 'form-control', 'placeholder'=>'Employee ID', 'required'=>'')) }}
                     </div>
                     <div class="form-group col-sm-3">
                         {{ Form::label('SystemUser', 'System User:') }}
@@ -28,43 +29,43 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('LastName', 'Last Name:') }}
-                    {{ Form::text('LastName', null, array('class' => 'form-control', 'placeholder'=>'Last Name')) }}
+                    {{ Form::text('LastName', null, array('class' => 'form-control', 'placeholder'=>'Last Name', 'required'=>'')) }}
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         {{ Form::label('Title', 'Title:') }} 
-                        {{ Form::text('Title', null, array('class'=>'form-control', 'placeholder'=>'Title')) }}
+                        {{ Form::text('Title', null, array('class'=>'form-control', 'placeholder'=>'Title', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('FirstName', 'First Name:') }} 
-                        {{ Form::text('FirstName', null, array('class'=>'form-control', 'placeholder'=>'First Name')) }}
+                        {{ Form::text('FirstName', null, array('class'=>'form-control', 'placeholder'=>'First Name', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('MiddleName', 'Middle Name:') }}
-                        {{ Form::text('MiddleName', null, array('class' => 'form-control', 'placeholder'=>'Middle Name')) }}
+                        {{ Form::text('MiddleName', null, array('class' => 'form-control', 'placeholder'=>'Middle Name', 'required'=>'')) }}
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
                         {{ Form::label('Department', 'Deparment') }} 
-                        {{ Form::text('Deparment', null, array('class'=>'form-control', 'placeholder'=>'Deparment')) }}
+                        {{ Form::text('Deparment', null, array('class'=>'form-control', 'placeholder'=>'Deparment', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('Unit', 'Unit') }} 
-                        {{ Form::text('Unit', null, array('class'=>'form-control', 'placeholder'=>'Unit')) }}
+                        {{ Form::text('Unit', null, array('class'=>'form-control', 'placeholder'=>'Unit', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('Division', 'Division') }} 
-                        {{ Form::text('Division', null, array('class'=>'form-control', 'placeholder'=>'Division')) }}
+                        {{ Form::text('Division', null, array('class'=>'form-control', 'placeholder'=>'Division', 'required'=>'')) }}
                     </div>
                 </div>
                 <div class="form-group">
                     {{ Form::label('Position', 'Position:') }}
-                    {{ Form::text('Position', null, array('class' => 'form-control', 'placeholder'=>'Position')) }}
+                    {{ Form::text('Position', null, array('class' => 'form-control', 'placeholder'=>'Position', 'required'=>'')) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('Email', 'E-mail Address:') }}
-                    {{ Form::text('Email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address')) }}
+                    {{ Form::text('Email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'')) }}
                 </div>
                 {{ Form::submit('Submit',array('class'=>'pull-right btn btn-primary col')) }}   
                 <!-- End of Information Forms -->
@@ -137,5 +138,12 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+
+@section('custom_page_script')
+
+    {!! Html::script('js/parsley.min.js') !!}
 
 @endsection
