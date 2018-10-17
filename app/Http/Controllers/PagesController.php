@@ -10,7 +10,7 @@ class PagesController extends Controller
     	return view('pages.gatekeeper');
     }
     public function getQRGenerator(){
-    	return view('pages.qr_generator');
+        return view('pages.qr_generator');
     }
     public function getQRScanner(){
     	return view('pages.qr_scanner');
@@ -18,8 +18,9 @@ class PagesController extends Controller
     public function getStatistics(){
     	return view('pages.statistics');
     }
-    /* public function getRegistration(){
+    public function getRegistration(){
     	return view('pages.user_registration_form');
-    } */
+    }
     
 }
+

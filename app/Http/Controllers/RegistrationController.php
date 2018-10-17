@@ -11,6 +11,7 @@ class RegistrationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -34,6 +35,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
+        
         //validate the data
         $this->validate($request, array(
                 'EmployeeID'=>'required|max:10',

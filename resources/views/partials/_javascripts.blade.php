@@ -16,12 +16,6 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/script.js') }}"></script>
                 <!-- End of General Scripts -->
 
-
-<!-- Validation js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script type="text/javascript" src="assets/pages/form-validation/validate.js"></script>
-
 {{-- 
 <!-- Horizontal-Timeline js -->
 <script type="text/javascript" src="{{ URL::asset('assets/pages/dashboard/horizontal-timeline/js/main.js') }}"></script>

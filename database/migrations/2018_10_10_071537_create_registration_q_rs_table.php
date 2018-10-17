@@ -15,7 +15,6 @@ class CreateRegistrationQRsTable extends Migration
     {
         Schema::create('EmployeeQRCode', function (Blueprint $table) {
             $table->string('EmployeeID');
-            $table->string('UserName');
             $table->string('QRCode');
             $table->string('QRHashed');
             $table->timestamps();

@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('Email', 'E-mail Address:') }}
-                    {{ Form::text('Email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'')) }}
+                    {{ Form::email('Email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'','data-parsley-type'=>'email')) }}
                 </div>
                 {{ Form::submit('Submit',array('class'=>'pull-right btn btn-primary col')) }}   
                 <!-- End of Information Forms -->
@@ -118,8 +118,8 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('HashedValue', 'Hashed Value:') }}
-                    {{ Form::text('HashedValue', null, array('class' => 'form-control', 'readonly')) }}
-                </div>
+                    {{ Form::text('HashedValue', null, array('class' => 'form-control', 'readonly', 'onkeyup'=>'generate_qrcode(this.value)')) }}
+                </div>  
                 {!! Form::close() !!}
                 <!-- End of Information Forms -->
             </div>
@@ -129,7 +129,7 @@
                 <!-- Profile Card -->
                 <div class="card user-card">
                     <div class="card-block">
-                        <div class="img-hover">
+                        <div class="img-hover" id="QRresult"> 
                             <center><img class="img-fluid" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=9e2256c95f8f0d7db5709ab27a778b9f" alt=""></center>
                         </div>
                     </div>
@@ -144,6 +144,23 @@
 
 @section('custom_page_script')
 
-    {!! Html::script('js/parsley.min.js') !!}
+{!! Html::script('js/parsley.min.js') !!}
+
+
+<script type="text/javascript">
+
+    function generate_qrcode(qrValue){
+        $.ajax({
+            type: 'get',
+            url: '/admin/qr_system/qr_generator/getQRValueReg',
+            data: {qrValue:qrValue},
+            success: function(code){
+                $('#QRresult').html(code);
+            }
+        });
+    }
+
+</script>
+
 
 @endsection

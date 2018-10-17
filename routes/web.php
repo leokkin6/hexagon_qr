@@ -12,12 +12,20 @@
 */
 Route::get('/','PagesController@getGatekeeper');
 Route::get('/admin/monitoring/gatekeeper','PagesController@getGatekeeper');
-Route::get('/admin/qr_system/qr_generator','PagesController@getQRGenerator');
-Route::get('/admin/qr_system/qr_scanner','PagesController@getQRScanner');
 Route::get('/admin/monitoring/statistics','PagesController@getStatistics');
-#Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
 
+#QR Generator Routes
+Route::get('/admin/qr_system/qr_generator','PagesController@getQRGenerator');
+Route::get('/admin/qr_system/qr_generator/getQRValueGen','QRGeneratorController@getQRValueGen');
+Route::get('/admin/qr_system/qr_scanner','PagesController@getQRScanner');
+
+#User Registration
 Route::resource('/admin/user_access/user_registration','RegistrationController');	
+Route::get('/admin/qr_system/qr_generator/getQRValueReg','QRGeneratorController@getQRValueReg');
+
+
+
+#Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
 
 
 
