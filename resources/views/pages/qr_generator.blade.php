@@ -17,10 +17,9 @@
         <div class="row">
             <div class="col-xs-9 col-md-7">
                 <!-- Header LSection -->
-                <h4 class="sub-title"><i class="icofont icofont-lock"></i> QR Authentication</h4>
+                <h4 class="sub-title"><i class="icofont icofont-lock"></i> Customize QR Generator</h4>
                 <!-- Information Forms -->
                 <div class="form-group">
-                    {{ Form::label('QRValue', 'QR Value:') }}
                     {{ Form::textarea('QRValue', null, array('class' => 'form-control','onkeyup'=>'generate_qrcode(this.value)', 'id'=>'QRValue', 'placeholder'=>'Input QR value here...')) }}
                 </div>
                 

@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="form-group col-sm-9">
                         {{ Form::label('EmployeeID', 'Employee ID:') }}
-                        {{ Form::text('EmployeeID', null, array('class' => 'form-control', 'placeholder'=>'Employee ID', 'required'=>'')) }}
+                        {{ Form::text('EmployeeID', null, array('class' => 'form-control', 'placeholder'=>'Employee ID', 'id'=>'txt_employeeID','required'=>'')) }}
                     </div>
                     <div class="form-group col-sm-3">
                         {{ Form::label('SystemUser', 'System User:') }}
@@ -114,11 +114,11 @@
                 <!-- Information Forms -->
                 <div class="form-group">
                     {{ Form::label('QRValue', 'QR Value:') }}
-                    {{ Form::text('QRValue', null, array('class' => 'form-control', 'readonly')) }}
+                    {{ Form::text('QRValue', null, array('class' => 'form-control', 'id'=>'txt_QRValue','onkeyup'=>'generate_qrcode(this.value)')) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('HashedValue', 'Hashed Value:') }}
-                    {{ Form::text('HashedValue', null, array('class' => 'form-control', 'readonly', 'onkeyup'=>'generate_qrcode(this.value)')) }}
+                    {{ Form::text('HashedValue', null, array('class' => 'form-control', 'readonly','id'=>'txt_QRHash')) }}
                 </div>  
                 {!! Form::close() !!}
                 <!-- End of Information Forms -->
@@ -146,16 +146,22 @@
 
 {!! Html::script('js/parsley.min.js') !!}
 
-
+ 
 <script type="text/javascript">
+    $(document).ready(function () {
+     $('#txt_employeeID').keyup(function() {
+            $('#txt_QRValue').val($(this).val());
+        });
+    });
 
     function generate_qrcode(qrValue){
         $.ajax({
             type: 'get',
             url: '/admin/qr_system/qr_generator/getQRValueReg',
             data: {qrValue:qrValue},
-            success: function(code){
-                $('#QRresult').html(code);
+            success: function(data){
+                $('#QRresult').html(data.code);
+                $('#txt_QRHash').val(data.codeHash);
             }
         });
     }
