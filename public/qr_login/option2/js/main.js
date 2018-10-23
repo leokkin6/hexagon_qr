@@ -1,100 +1,10 @@
-@extends('main')
-
-@section('has_class','has class')
-@section('title','| QR SCANNER')
-@section('content_header','QR Scanner')
-@section('content_subheader','Scan for QR Entry')
-@section('breadcrumb','QR Scanner')
-
-@section('content')
-
-<!--QR Card -->
-<div class="card">
-    <div class="card-block">
-        <!-- Tab panes -->
-        <div class="row">
-            <div class="col">
-                <h4 class="sub-title"><i class="icofont icofont-lock"></i>QR Scanner</h4>
-                <!-- Header LSection -->
-                <div class="well" style="position: relative;display: inline-block;">
-                    <canvas width="320" height="240" id="webcodecam-canvas"></canvas>
-                    <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
-                    <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
-                    <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
-                    <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
-                </div>
-                <div class="well" style="width: 100%;">
-                    <label id="zoom-value" width="100">Zoom: 2</label>
-                    <input id="zoom" onchange="Page.changeZoom();" type="range" min="10" max="30" value="20">
-                    <label id="brightness-value" width="100">Brightness: 0</label>
-                    <input id="brightness" onchange="Page.changeBrightness();" type="range" min="0" max="128" value="0">
-                    <label id="contrast-value" width="100">Contrast: 0</label>
-                    <input id="contrast" onchange="Page.changeContrast();" type="range" min="-128" max="128" value="0">
-                    <label id="threshold-value" width="100">Threshold: 0</label>
-                    <input id="threshold" onchange="Page.changeThreshold();" type="range" min="0" max="512" value="0">
-                    <label id="sharpness-value" width="100">Sharpness: off</label>
-                    <input id="sharpness" onchange="Page.changeSharpness();" type="checkbox">
-                    <label id="grayscale-value" width="100">grayscale: off</label>
-                    <input id="grayscale" onchange="Page.changeGrayscale();" type="checkbox">
-                    <br>
-                    <label id="flipVertical-value" width="100">Flip Vertical: off</label>
-                    <input id="flipVertical" onchange="Page.changeVertical();" type="checkbox">
-                    <label id="flipHorizontal-value" width="100">Flip Horizontal: off</label>
-                    <input id="flipHorizontal" onchange="Page.changeHorizontal();" type="checkbox">
-                </div>
-                <!-- End of Information Forms -->
-            </div>
-            <!-- Header RSection -->
-            <div class="form-group col">
-                <h4 class="sub-title"><i class="icofont icofont-lock"></i>Scanned Results</h4>
-                <div class="thumbnail" id="result">
-                    <div class="well">
-                        <img width="320" height="240" id="scanned-img" src="">
-                    </div>
-                    <div class="caption">
-                        <p id="scanned-QR"></p>
-                    </div>
-                </div>
-                <select class="form-control" id="camera-select" style="margin-bottom: 10px"></select>
-                <div class="form-group">
-                    <button title="Decode Image" class="btn btn-default btn-sm" id="decode-img" type="button" data-toggle="tooltip"><span class="icofont icofont-upload-alt"></span></button>
-                    <button title="Image shoot" class="btn btn-info btn-sm disabled" id="grab-img" type="button" data-toggle="tooltip"><span class="icofont icofont-ui-image"></span></button>
-                    <button title="Play" class="btn btn-success btn-sm" id="play" type="button" data-toggle="tooltip"><span class="icofont icofont-ui-play"></span></button>
-                    <button title="Pause" class="btn btn-warning btn-sm" id="pause" type="button" data-toggle="tooltip"><span class="icofont icofont-ui-pause"></span></button>
-                    <button title="Stop streams" class="btn btn-danger btn-sm" id="stop" type="button" data-toggle="tooltip"><span class="icofont icofont-ui-play-stop"></span></button>
-                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endsection
-
-@section('custom_page_script')
-
-<script type="text/javascript" src=" {{ URL::asset('/qr_login/option2/js/filereader.js') }}"></script>
-<script type="text/javascript" src=" {{ URL::asset('/qr_login/option2/js/qrcodelib.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('/qr_login/option2/js/webcodecamjs.js ') }}"></script>
-
-<script>
- function CallAjaxLoginQr(code) {
-      $.ajax({
-            type: "POST",
-            cache: false,
-            data: {data:code},
-                success: function(data) {
-                  console.log(data);
-                  if (data==1) {
-                    //location.reload()
-                    $(location).attr('href', '{{url('/')}}');
-                  }else{
-                   return confirm('There is no user with this qr code'); 
-                  }
-                  // 
-                }
-            })
- }
-
+/*!
+ * WebCodeCamJS 2.1.0 javascript Bar code and QR code decoder 
+ * Author: Tóth András
+ * Web: http://atandrastoth.co.uk
+ * email: atandrastoth@gmail.com
+ * Licensed under the MIT license
+ */
 (function(undefined) {
     "use strict";
 
@@ -141,7 +51,6 @@
                 }, 300);
             });
             scannedImg.src = res.imgData;
-            CallAjaxLoginQr(res.code);
             scannedQR[txt] = res.format + ": " + res.code;
         },
         getDevicesError: function(error) {
@@ -163,7 +72,7 @@
             if (error.name == "NotSupportedError") {
                 var ans = confirm("Your browser does not support getUserMedia via HTTP!\n(see: https:goo.gl/Y0ZkNV).\n You want to see github demo page in a new window?");
                 if (ans) {
-                    window.open("http://rolandalla.com");
+                    window.open("https://andrastoth.github.io/webcodecamjs/");
                 }
             } else {
                 for (p in error) {
@@ -334,13 +243,3 @@
         }
     });
 }).call(window.Page = window.Page || {});
-
-//Trigger Click 
-$("document").ready(function() {
-    setTimeout(function() {
-        $("#play").trigger('click');
-    },10);
-});
-
-</script>
-@endsection

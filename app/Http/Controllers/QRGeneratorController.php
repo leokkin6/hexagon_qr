@@ -21,3 +21,4 @@ class QRGeneratorController extends Controller
 		}
     }
 }
+
