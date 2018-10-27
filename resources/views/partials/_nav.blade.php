@@ -75,41 +75,42 @@
     </div>
     <div class="main-menu-content" style="width: auto;">
         <ul class="main-navigation">
-            <li class="nav-item {{ (current_page("admin/monitoring")) ? 'has-class' : '' }} ">
-            <a href="/admin/monitoring/gatekeeper">
+            <li class="nav-item {{ (current_page("monitoring")) ? 'has-class' : '' }} ">
+            <a href="#">
             <i class="ti-home"></i>
             <span>Monitoring</span>
             </a>
             <ul class="tree-1 open">
-                <li class="{{ (current_page("admin/monitoring/gatekeeper")) ? 'has-class' : '' }}"><a href="/admin/monitoring/gatekeeper">Gatekeeper</a></li>
-                <li class="{{ (current_page("admin/monitoring/statistics")) ? 'has-class' : '' }}"><a href="/admin/monitoring/statistics">Statistics</a></li>
+                <li class="{{ (current_page("monitoring/gatekeeper")) ? 'has-class' : '' }}"><a href="/monitoring/gatekeeper">Gatekeeper</a></li>
+                <li class="{{ (current_page("monitoring/statistics")) ? 'has-class' : '' }}"><a href="/monitoring/statistics">Statistics</a></li>
             </ul>
             </li>
-            <li class="nav-item {{ (current_page("admin/user_access")) ? 'has-class' : '' }} ">
+            <li class="nav-item {{ (current_page("security")) ? 'has-class' : '' }} ">
             <a href="#!">
             <i class="icofont icofont-ssl-security"></i>
             <span>Security</span>
             </a>
             <ul class="tree-1">
-                <li class="nav-sub-item {{ (current_page("admin/user_access/user_registration")) ? 'has-class' : '' }}"><a href="#">User Access</a>
+                <li class="nav-sub-item {{ (current_page("security")) ? 'has-class' : '' }}"><a href="#">User Access</a>
                 <ul class="tree-2">
-                    <li class="{{ (current_page("admin/user_access/user_registration")) ? 'has-class' : '' }}"><a href="/admin/user_access/user_registration">User Registration</a></li>
-                    <li class="{{ (current_page("admin/user_access/user_role")) ? 'has-class' : '' }}"><a href="../vertical-overlay/menu-header-fixed.html">User Role</a></li>
-                    <li class="{{ (current_page("admin/user_access/user_accesslevel")) ? 'has-class' : '' }}"><a href="../vertical-compact/menu-compact.html">User Access Level</a></li>
+                    <li class="{{ (current_page("security/registration")) ? 'has-class' : '' }}"><a href="/security/registration">User Registration</a></li>
+                    <li class="{{ (current_page("security/user_role")) ? 'has-class' : '' }}"><a href="../vertical-overlay/menu-header-fixed.html">User Role</a></li>
+                    <li class="{{ (current_page("security/user_accesslevel")) ? 'has-class' : '' }}"><a href="../vertical-compact/menu-compact.html">User Access Level</a></li>
                 </ul>
                 </li>
-                <li class="{{ (current_page("admin/user_profile/registration")) ? 'has-class' : '' }}">     <a href="#!">User Profile</a>
+                <li class="{{ (current_page("security/profiling")) ? 'has-class' : '' }}">
+                    <a href="#!">User Profile</a>
                 </li>
             </ul>
             </li>
-            <li class="nav-item {{ (current_page("admin/qr_system")) ? 'has-class' : '' }} ">
+            <li class="nav-item {{ (current_page("qr")) ? 'has-class' : '' }} ">
             <a href="#!">
             <i class="icofont icofont-qr-code"></i>
             <span>QR System</span>
             </a>
             <ul class="tree-1">
-                <li class="{{ (current_page("admin/qr_system/qr_scanner")) ? 'has-class' : '' }}"><a href="/admin/qr_system/qr_scanner">QR Scanner</a>
-                <li class="{{ (current_page("admin/qr_system/qr_generator")) ? 'has-class' : '' }}">     <a href="/admin/qr_system/qr_generator">QR Generator</a>
+                <li class="{{ (current_page("qr/scanner")) ? 'has-class' : '' }}"><a href="/qr/scanner">QR Scanner</a>
+                <li class="{{ (current_page("qr/generator")) ? 'has-class' : '' }}">     <a href="/qr/generator">QR Generator</a>
                 </li>
             </ul>
             </li>        

@@ -35,7 +35,6 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        
         //validate the data
         $this->validate($request, array(
                 'EmployeeID'=>'required|max:10',

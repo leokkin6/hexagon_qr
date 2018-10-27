@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRegistrationQRsTable extends Migration
+class CreateScannerLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateRegistrationQRsTable extends Migration
      */
     public function up()
     {
-        Schema::create('EmployeeQRCode', function (Blueprint $table) {
-            $table->string('EmployeeID');
-            $table->string('QRCode');
-            $table->string('QRHashed');
-            $table->timestamps();
+        Schema::create('scanner_logs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('DateEntered');
+            $table->string('Hash');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateRegistrationQRsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('EmployeeQRCode');
+        Schema::dropIfExists('scanner_logs');
     }
 }

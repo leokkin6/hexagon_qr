@@ -9,23 +9,33 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+// */
+ 
+#Upon Landing Page
 Route::get('/','PagesController@getGatekeeper');
-Route::get('/admin/monitoring/gatekeeper','PagesController@getGatekeeper');
-Route::get('/admin/monitoring/statistics','PagesController@getStatistics');
+
 
 #QR Generator Routes
-Route::get('/admin/qr_system/qr_generator','PagesController@getQRGenerator');
-Route::get('/admin/qr_system/qr_generator/getQRValueGen','QRGeneratorController@getQRValueGen');
-Route::get('/admin/qr_system/qr_scanner','PagesController@getQRScanner');
+Route::get('/qr/generator','PagesController@getQRGenerator');
+Route::get('/qr/generator/getQRValueGen','QRGeneratorController@getQRValueGen');
+Route::get('/qr/generator/getQRValueReg','QRGeneratorController@getQRValueReg'); #QR Gen for Registration
 
-#User Registration
-Route::resource('/admin/user_access/user_registration','RegistrationController');	
-Route::get('/admin/qr_system/qr_generator/getQRValueReg','QRGeneratorController@getQRValueReg');
+#QR Scanner Routes
+Route::get('/qr/scanner/posts','QRScannerController@insertQRData');
+Route::get('/qr/scanner','PagesController@getQRScanner');
+
+#User Registration Routes
+Route::resource('/security/registration','RegistrationController');	
+Route::get('/security/registration','PagesController@getRegistration');	
 
 
-
-#Route::get('/admin/user_access/user_registration','PagesController@getRegistration');
+#Monitoring
+	#Gatekeeper Routes
+// Route::get('/monitoring/gatekeeper/fetchUnit','GatekeeperController@fetchUnit');
+Route::get('/monitoring/gatekeeper/fetchData','GatekeeperController@fetchData');
+Route::get('/monitoring/gatekeeper','PagesController@getGatekeeper');
+	#Statistics Routes
+Route::get('/monitoring/statistics','PagesController@getStatistics');
 
 
 
@@ -109,3 +119,39 @@ Route::group(['prefix' => 'admin'], function (){
 
 */
 
+
+// Route::get('/dump', function() {
+// 	$user = DB::select("SELECT EmployeeName 
+// 						FROM EmployeeLogs
+// 						WHERE ID = 1 ");
+// 	dd($user);
+// });
+ 
+// Route::get('/dump1', function() {
+// 	$user = DB::selectOne("SELECT * 
+// 						FROM EmployeeLogs
+// 						WHERE ID = 1");
+
+// 	$result = DB::select("SELECT *
+// 						FROM (SELECT TOP 5 Row_Number() 
+// 							OVER (ORDER BY DateEntered DESC) AS ROWNUMBER, *
+// 						FROM EmployeeLogs) A 
+// 						--WHERE ROWNUMBER = 1");
+// 	dd($result);
+// 	// return $result->EmployeeName;
+// });
+
+// Route::get('/dump2', function(){
+// 	// DB::insert("INSERT INTO EmployeeLogs (UnitCompany, EmployeeID, EmployeeName,DateEntered,Status,Hash) VALUES (?,?,?,?,?,?)", 
+//  //    		array('001-73','00150-1799','Kim Domingo','01/01/01',1,'123'));
+// 	// return 'Success';
+// 	if(request()->ajax()){
+//     	$code = $_REQUEST['code'];
+
+//     	DB::insert("INSERT INTO scanner_logs (DateEntered,Hash) VALUES (GETDATE(),?)", 
+//     		array($code));
+    	
+//     	return $code;
+// 		}
+		
+// });

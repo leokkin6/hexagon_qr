@@ -16,7 +16,7 @@
                 <!-- Header LSection -->
                 <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i> General Information</h4>
                 <!-- Information Forms -->
-                {!! Form::open(['route' => 'user_registration.store']) !!}
+                {!! Form::open(['route' => 'registration.store']) !!}
                 <div class="row">
                     <div class="form-group col-sm-9">
                         {{ Form::label('EmployeeID', 'Employee ID:') }}
@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="form-group col">
                         {{ Form::label('Title', 'Title:') }} 
-                        {{ Form::text('Title', null, array('class'=>'form-control', 'placeholder'=>'Title', 'required'=>'')) }}
+                        {{ Form::select('Title', ['M' => 'Mister','Ms' => 'Miss'],null,['class' => 'form-control']) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('FirstName', 'First Name:') }} 
@@ -157,7 +157,7 @@
     function generate_qrcode(qrValue){
         $.ajax({
             type: 'get',
-            url: '/admin/qr_system/qr_generator/getQRValueReg',
+            url: '/qr/generator/getQRValueReg',
             data: {qrValue:qrValue},
             success: function(data){
                 $('#QRresult').html(data.code);

@@ -13,7 +13,7 @@
 <div class="card">
     <div class="card-block">
         <!-- Tab panes -->
-        {!! Form::open(['route' => 'user_registration.store']) !!}
+        {!! Form::open(['route' => 'registration.store']) !!}
         <div class="row">
             <div class="col-xs-9 col-md-7">
                 <!-- Header LSection -->
@@ -53,7 +53,7 @@
 	function generate_qrcode(qrValue){
 		$.ajax({
 			type: 'get',
-			url: '/admin/qr_system/qr_generator/getQRValueGen',
+			url: '/qr/generator/getQRValueGen',
 			data: {qrValue:qrValue},
 			success: function(code){
 				$('#QRresult').html(code);

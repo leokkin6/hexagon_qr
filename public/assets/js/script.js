@@ -496,17 +496,17 @@ $(document).ready(function() {
 
 // toggle full screen
 function toggleFullScreen() {
-    var a = $(window).height() - 10;
-    $('.main-menu-content').css('min-height', a);
-    if (Modernizr.cssscrollbar) {
-        $(".main-menu-content").slimScroll({
-            height: a,
-            allowPageScroll: false,
-            wheelStep: 5,
-            color: '#fff',
-            animate: true
-        });
-    }
+    // var a = $(window).height() - 10;
+    // $('.main-menu-content').css('min-height', a);
+    // if (Modernizr.cssscrollbar) {
+    //     $(".main-menu-content").slimScroll({
+    //         height: a,
+    //         allowPageScroll: false,
+    //         wheelStep: 5,
+    //         color: '#fff',
+    //         animate: true
+    //     });
+    // }
     if (!document.fullscreenElement && // alternative standard method
         !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
         if (document.documentElement.requestFullscreen) {
