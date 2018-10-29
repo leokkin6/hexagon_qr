@@ -1,73 +1,90 @@
 @extends('main')
  
-@section('title','| User Registration')
-@section('content_header','User Registration')
-@section('content_subheader','User registration for QR Access')
-@section('breadcrumb', 'User Registration')
+@section('title','| Employee Registration')
+@section('content_header','Employee Registration')
+@section('content_subheader','Employee registration for QR Access')
+@section('breadcrumb', 'Employee Registration')
 
  
 @section('content')
 <!--General Information Card-->
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="card">
     <div class="card-block">
         <!-- Tab panes -->
         <div class="row">
             <div class="col-xs-9 col-md-7">
+
+                <h1>{{isset($employee)?'Edit':'New'}} Employee</h1>
+        <hr/>
+        @if(isset($employee))
+            {!! Form::model($employee,['method'=>'put','id'=>'frm', 'files'=>true]) !!}
+        @else
+            {!! Form::open(['id'=>'frm', 'files'=>true]) !!}
+        @endif
                 <!-- Header LSection -->
                 <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i> General Information</h4>
                 <!-- Information Forms -->
-                {!! Form::open(['route' => 'registration.store']) !!}
                 <div class="row">
                     <div class="form-group col-sm-9">
-                        {{ Form::label('EmployeeID', 'Employee ID:') }}
-                        {{ Form::text('EmployeeID', null, array('class' => 'form-control', 'placeholder'=>'Employee ID', 'id'=>'txt_employeeID','required'=>'')) }}
+                        {{ Form::label('emp_id', 'Employee ID:') }}
+                        {{ Form::text('emp_id', null, array('class' => 'form-control', 'placeholder'=>'Employee ID', 'id'=>'txt_employeeID','required'=>'')) }}
                     </div>
                     <div class="form-group col-sm-3">
-                        {{ Form::label('SystemUser', 'System User:') }}
-                        {{ Form::select('SystemUser', ['0' => 'No','1' => 'Yes'],null,['class' => 'form-control']) }}
+                        {{ Form::label('is_user', 'System User:') }}
+                        {{ Form::select('is_user', ['N' => 'No','Y' => 'Yes'],null,['class' => 'form-control']) }}
                     </div>
                 </div>
                 <div class="form-group">
-                    {{ Form::label('LastName', 'Last Name:') }}
-                    {{ Form::text('LastName', null, array('class' => 'form-control', 'placeholder'=>'Last Name', 'id'=>'txt_LastName' ,'required'=>'')) }}
+                    {{ Form::label('last_name', 'Last Name:') }}
+                    {{ Form::text('last_name', null, array('class' => 'form-control', 'placeholder'=>'Last Name', 'id'=>'txt_LastName', 'required'=>'')) }}
                 </div>
                 <div class="row">
                     <div class="form-group col">
-                        {{ Form::label('Title', 'Title:') }} 
-                        {{ Form::select('Title', ['M' => 'Mister','Ms' => 'Miss'],null,['class' => 'form-control']) }}
+                        {{ Form::label('title', 'Title:') }} 
+                        {{ Form::text('title', null, array('class'=>'form-control', 'placeholder'=>'Title', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
-                        {{ Form::label('FirstName', 'First Name:') }} 
-                        {{ Form::text('FirstName', null, array('class'=>'form-control', 'placeholder'=>'First Name', 'required'=>'')) }}
+                        {{ Form::label('first_name', 'First Name:') }} 
+                        {{ Form::text('first_name', null, array('class'=>'form-control', 'placeholder'=>'First Name', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
-                        {{ Form::label('MiddleName', 'Middle Name:') }}
-                        {{ Form::text('MiddleName', null, array('class' => 'form-control', 'placeholder'=>'Middle Name', 'required'=>'')) }}
+                        {{ Form::label('middle_name', 'Middle Name:') }}
+                        {{ Form::text('middle_name', null, array('class' => 'form-control', 'placeholder'=>'Middle Name', 'required'=>'')) }}
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        {{ Form::label('Department', 'Deparment') }} 
-                        {{ Form::text('Deparment', null, array('class'=>'form-control', 'placeholder'=>'Deparment', 'id'=>'txt_Department', 'required'=>'')) }}
+                        {{ Form::label('department', 'Deparment') }} 
+                        {{ Form::text('department', null, array('class'=>'form-control', 'placeholder'=>'Deparment', 'id'=>'txt_Department', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
-                        {{ Form::label('Unit', 'Unit') }} 
-                        {{ Form::text('Unit', null, array('class'=>'form-control', 'placeholder'=>'Unit', 'required'=>'')) }}
+                        {{ Form::label('unit', 'Unit') }} 
+                        {{ Form::text('unit', null, array('class'=>'form-control', 'placeholder'=>'Unit', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
-                        {{ Form::label('Division', 'Division') }} 
-                        {{ Form::text('Division', null, array('class'=>'form-control', 'placeholder'=>'Division', 'required'=>'')) }}
+                        {{ Form::label('division', 'Division') }} 
+                        {{ Form::text('division', null, array('class'=>'form-control', 'placeholder'=>'Division', 'required'=>'')) }}
                     </div>
                 </div>
                 <div class="form-group">
-                    {{ Form::label('Position', 'Position:') }}
-                    {{ Form::text('Position', null, array('class' => 'form-control', 'placeholder'=>'Position', 'required'=>'')) }}
+                    {{ Form::label('position', 'Position:') }}
+                    {{ Form::text('position', null, array('class' => 'form-control', 'placeholder'=>'Position', 'required'=>'')) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('Email', 'E-mail Address:') }}
-                    {{ Form::email('Email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'','data-parsley-type'=>'email')) }}
+                    {{ Form::label('email', 'E-mail Address:') }}
+                    {{ Form::email('email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'','data-parsley-type'=>'email')) }}
                 </div>
-                {{ Form::submit('Submit',array('class'=>'pull-right btn btn-primary col')) }}   
+                {{ Form::submit('Submit',array('class'=>'pull-right btn btn-primary col')) }} 
                 <!-- End of Information Forms -->
             </div>
             <!-- Header RSection -->
@@ -79,15 +96,16 @@
                         <div class="card rounded-card user-card">
                             <div class="card-block">
                                 <div class="img-hover">
-                                    <img class="img-fluid img-circle" src="{{ URL::asset('assets/images/avatar.png')}}" alt="round-img">
-                                    {{--
+                       
+                                    <img id="myImg" class="img-fluid img-circle" src="{{asset((isset($employee) && $employee->image!='')?'uploads/'.$employee->image:'assets/images/avatar.png')}}"alt="round-img" height="42" width="42">
+                                    
                                     <div class="img-overlay">
                                         <span>
-                                        <a href="{{ URL::asset('assets/images/avatar.png') }}" class="btn btn-sm btn-primary" data-popup="lightbox"><i class="icofont icofont-plus"></i></a>
+                                        <a href="{{ URL::asset('assets/images/avatar.png') }}" class="btn btn-sm btn-primary" data-popup="lightbox" height="200px" width="200px"><i class="icofont icofont-plus"></i></a>
                                         <a href="" class="btn btn-sm btn-primary"><i class="icofont icofont-link-alt"></i></a> 
                                         </span>
                                     </div>
-                                    --}}
+                                  
                                 </div>
                             </div>
                         </div>
@@ -95,8 +113,14 @@
                 </div>
                 <div class="form-group">
                     <div class="col">
-                        <input type="file" class="form-control">
+                        {!! Form::file('image', array('class' => 'image')) !!}
                     </div>
+                </div>
+            </div>
+                     <div class="form-group">
+                        {{ Form::hidden('status', 'ACTIVE') }}
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -113,12 +137,12 @@
                 <h4 class="sub-title"><i class="icofont icofont-lock"></i> QR Authentication</h4>
                 <!-- Information Forms -->
                 <div class="form-group">
-                    {{ Form::label('QRValue', 'QR Value:') }}
-                    {{ Form::text('QRValue', null, array('class' => 'form-control', 'id'=>'txt_QRValue', 'readonly')) }}
+                    {{ Form::label('qr_value', 'QR Value:') }}
+                    {{ Form::text('qr_value', null, array('class' => 'form-control', 'id'=>'txt_QRValue', 'readonly')) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('HashedValue', 'Hashed Value:') }}
-                    {{ Form::text('HashedValue', null, array('class' => 'form-control', 'readonly','id'=>'txt_QRHash')) }}
+                    {{ Form::label('hash_value', 'Hashed Value:') }}
+                    {{ Form::text('hash_value', null, array('class' => 'form-control', 'readonly','id'=>'txt_QRHash')) }}
                 </div>  
                 {!! Form::close() !!}
                 <!-- End of Information Forms -->
@@ -138,6 +162,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 @endsection
 
@@ -170,6 +197,22 @@
         });
     }
  
+</script>
+
+<script type="text/javascript">
+    $(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#myImg').attr('src', e.target.result);
+};
 </script>
 
 

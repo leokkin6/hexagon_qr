@@ -28,6 +28,25 @@ Route::get('/qr/scanner','PagesController@getQRScanner');
 Route::resource('/security/registration','RegistrationController');	
 Route::get('/security/registration','PagesController@getRegistration');	
 
+#Employee Registration
+Route::group(['prefix' => 'employees'], function() {
+  Route::get('/', 'EmployeeController@index');
+  Route::match(['get', 'post'], 'create', 'EmployeeController@create');
+  Route::match(['get', 'put'], 'update/{id}', 'EmployeeController@update');
+  Route::get('show/{id}', 'EmployeeContoller@show');
+  Route::delete('delete/{id}', 'EmployeeController@delete');
+});
+
+
+
+#User Login
+Route::resource('/admin', 'EmployeeController');
+Route::get('/main', 'MainController@index');
+Route::post('/main/checklogin', 'MainController@checklogin');
+Route::get('main/main', 'MainController@main');
+Route::get('main/logout', 'MainController@logout');
+
+
 
 #Monitoring
 	#Gatekeeper Routes

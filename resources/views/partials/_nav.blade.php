@@ -76,30 +76,30 @@
     <div class="main-menu-content" style="width: auto;">
         <ul class="main-navigation">
             <li class="nav-item {{ (current_page("monitoring")) ? 'has-class' : '' }} ">
-            <a href="#">
+            <a href="/monitoring/gatekeeper">
             <i class="ti-home"></i>
             <span>Monitoring</span>
             </a>
             <ul class="tree-1 open">
                 <li class="{{ (current_page("monitoring/gatekeeper")) ? 'has-class' : '' }}"><a href="/monitoring/gatekeeper">Gatekeeper</a></li>
-                <li class="{{ (current_page("monitoring/statistics")) ? 'has-class' : '' }}"><a href="/monitoring/statistics">Statistics</a></li>
+                <li class="{{ (current_page("monitoring/statistics")) ? 'has-class' : '' }} disabled"><a href="#" class="nav-link disabled">Statistics</a></li>
             </ul>
             </li>
-            <li class="nav-item {{ (current_page("security")) ? 'has-class' : '' }} ">
+            <li class="nav-item {{ (current_page("employees")) ? 'has-class' : '' }} ">
             <a href="#!">
             <i class="icofont icofont-ssl-security"></i>
             <span>Security</span>
             </a>
             <ul class="tree-1">
-                <li class="nav-sub-item {{ (current_page("security")) ? 'has-class' : '' }}"><a href="#">User Access</a>
+                <li class="nav-sub-item {{ (current_page("employees/create")) ? 'has-class' : '' }}"><a href="#">User Access</a>
                 <ul class="tree-2">
-                    <li class="{{ (current_page("security/registration")) ? 'has-class' : '' }}"><a href="/security/registration">User Registration</a></li>
-                    <li class="{{ (current_page("security/user_role")) ? 'has-class' : '' }}"><a href="../vertical-overlay/menu-header-fixed.html">User Role</a></li>
-                    <li class="{{ (current_page("security/user_accesslevel")) ? 'has-class' : '' }}"><a href="../vertical-compact/menu-compact.html">User Access Level</a></li>
+                    <li class="{{ (current_page("employees/create")) ? 'has-class' : '' }}"><a href="/employees/create">User Registration</a></li>
+                    <li class="{{ (current_page("security/user_role")) ? 'has-class' : '' }}"><a href="#" class="nav-link disabled">User Role</a></li>
+                    <li class="{{ (current_page("security/user_accesslevel")) ? 'has-class' : '' }}"><a href="#" class="nav-link disabled">User Access Level</a></li>
                 </ul>
                 </li>
-                <li class="{{ (current_page("security/profiling")) ? 'has-class' : '' }}">
-                    <a href="#!">User Profile</a>
+                <li class="{{ (current_page("employees")) ? 'has-class' : '' }}">
+                    <a href="/employees">User Profile</a>
                 </li>
             </ul>
             </li>
