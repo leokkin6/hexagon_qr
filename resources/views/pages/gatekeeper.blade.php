@@ -273,10 +273,6 @@
 
             }
             });
-
-
-            {{-- $('#unit').load('{{action('GatekeeperController@fetchUnit')}}')
-            $('#idnumber').load('{{action('GatekeeperController@fetchEmpId')}}') --}}
         }
 
         setInterval(updateGatekeeper, 1000); 

@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('LastName', 'Last Name:') }}
-                    {{ Form::text('LastName', null, array('class' => 'form-control', 'placeholder'=>'Last Name', 'required'=>'')) }}
+                    {{ Form::text('LastName', null, array('class' => 'form-control', 'placeholder'=>'Last Name', 'id'=>'txt_LastName' ,'required'=>'')) }}
                 </div>
                 <div class="row">
                     <div class="form-group col">
@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         {{ Form::label('Department', 'Deparment') }} 
-                        {{ Form::text('Deparment', null, array('class'=>'form-control', 'placeholder'=>'Deparment', 'required'=>'')) }}
+                        {{ Form::text('Deparment', null, array('class'=>'form-control', 'placeholder'=>'Deparment', 'id'=>'txt_Department', 'required'=>'')) }}
                     </div>
                     <div class="form-group col">
                         {{ Form::label('Unit', 'Unit') }} 
@@ -114,7 +114,7 @@
                 <!-- Information Forms -->
                 <div class="form-group">
                     {{ Form::label('QRValue', 'QR Value:') }}
-                    {{ Form::text('QRValue', null, array('class' => 'form-control', 'id'=>'txt_QRValue','onkeyup'=>'generate_qrcode(this.value)')) }}
+                    {{ Form::text('QRValue', null, array('class' => 'form-control', 'id'=>'txt_QRValue', 'readonly')) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('HashedValue', 'Hashed Value:') }}
@@ -149,9 +149,15 @@
  
 <script type="text/javascript">
     $(document).ready(function () {
-     $('#txt_employeeID').keyup(function() {
-            $('#txt_QRValue').val($(this).val());
+     $('#txt_employeeID,#txt_LastName,#txt_Department').keyup(function() {
+        var qrvalue = $('#txt_QRValue').val();
+        var hashed_value = generate_qrcode(qrvalue);
+            
+            $('#txt_QRValue').val($('#txt_employeeID').val()+'-'+$('#txt_LastName').val()+'-'+$('#txt_Department').val());
+            $('#txt_QRHash').val(hashed_value);
         });
+
+
     });
 
     function generate_qrcode(qrValue){
@@ -165,7 +171,7 @@
             }
         });
     }
-
+ 
 </script>
 
 
