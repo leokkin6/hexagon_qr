@@ -27,7 +27,7 @@ class MainController extends Controller
 
      if(Auth::attempt($user_data))
      {
-      return redirect('main/main');
+      return redirect('/monitoring/gatekeeper');
      }
      else
      {

@@ -14,6 +14,18 @@
 #Upon Landing Page
 Route::get('/','PagesController@getGatekeeper');
 
+Route::get('/testdb', function(){
+	try {
+        DB::connection()->getPdo();
+        if(DB::connection()->getDatabaseName()){
+            echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+        }else{
+            die("Could not find the database. Please check your configuration.");
+        }
+    } catch (\Exception $e) {
+        die("Could not open connection to database server.  Please check your configuration.");
+    }
+});
 
 #QR Generator Routes
 Route::get('/qr/generator','PagesController@getQRGenerator');
@@ -30,7 +42,7 @@ Route::get('/security/registration','PagesController@getRegistration');
 
 #Employee Registration
 Route::group(['prefix' => 'employees'], function() {
-  Route::get('/', 'EmployeeController@index');
+  Route::get('/profile', 'EmployeeController@index');
   Route::match(['get', 'post'], 'create', 'EmployeeController@create');
   Route::match(['get', 'put'], 'update/{id}', 'EmployeeController@update');
   Route::get('show/{id}', 'EmployeeContoller@show');

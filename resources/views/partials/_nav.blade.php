@@ -1,4 +1,4 @@
-<!-- Pre-loader start -->
+    <!-- Pre-loader start -->
 <div class="theme-loader">
     <div class="ball-scale">
         <div></div>
@@ -21,7 +21,7 @@
                     <li class="user-profile header-notification">
                         <a href="#!">
                         <img src="{{ URL::asset('assets/images/user.png') }}" alt="User-Profile-Image">
-                        <span>John Doe</span>
+                        <span>{{ Auth::user()->first_name}}</span>
                         <i class="ti-angle-down"></i>
                         </a>
                         <ul class="show-notification profile-notification">
@@ -46,7 +46,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#!">
+                                <a href="{{ url('/main/logout') }}">
                                 <i class="ti-layout-sidebar-left"></i> Logout
                                 </a>
                             </li>
@@ -98,8 +98,8 @@
                     <li class="{{ (current_page("security/user_accesslevel")) ? 'has-class' : '' }}"><a href="#" class="nav-link disabled">User Access Level</a></li>
                 </ul>
                 </li>
-                <li class="{{ (current_page("employees")) ? 'has-class' : '' }}">
-                    <a href="/employees">User Profile</a>
+                <li class="{{ (current_page("employees/profile")) ? 'has-class' : '' }}">
+                    <a href="/employees/profile">User Profile</a>
                 </li>
             </ul>
             </li>

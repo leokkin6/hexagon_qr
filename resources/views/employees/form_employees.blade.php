@@ -18,21 +18,19 @@
         </ul>
     </div>
 @endif
+
 <div class="card">
     <div class="card-block">
         <!-- Tab panes -->
         <div class="row">
             <div class="col-xs-9 col-md-7">
-
-                <h1>{{isset($employee)?'Edit':'New'}} Employee</h1>
-        <hr/>
-        @if(isset($employee))
-            {!! Form::model($employee,['method'=>'put','id'=>'frm', 'files'=>true]) !!}
-        @else
-            {!! Form::open(['id'=>'frm', 'files'=>true]) !!}
-        @endif
+                @if(isset($employee))
+                    {!! Form::model($employee,['method'=>'put','id'=>'frm', 'files'=>true]) !!}
+                @else
+                    {!! Form::open(['id'=>'frm', 'files'=>true]) !!}
+                @endif
                 <!-- Header LSection -->
-                <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i> General Information</h4>
+                    <h4 class="sub-title"><i class="icofont icofont-ui-user"></i></i>{{isset($employee)?' Edit':' New'}} Employee | General Information </h4>
                 <!-- Information Forms -->
                 <div class="row">
                     <div class="form-group col-sm-9">
@@ -85,6 +83,8 @@
                     {{ Form::email('email', null, array('class' => 'form-control', 'placeholder'=>'E-mail Address', 'required'=>'','data-parsley-type'=>'email')) }}
                 </div>
                 {{ Form::submit('Submit',array('class'=>'pull-right btn btn-primary col')) }} 
+                <br>
+                <br>
                 <!-- End of Information Forms -->
             </div>
             <!-- Header RSection -->
@@ -95,17 +95,11 @@
                     <div class="col">
                         <div class="card rounded-card user-card">
                             <div class="card-block">
-                                <div class="img-hover">
-                       
-                                    <img id="myImg" class="img-fluid img-circle" src="{{asset((isset($employee) && $employee->image!='')?'uploads/'.$employee->image:'assets/images/avatar.png')}}"alt="round-img" height="42" width="42">
-                                    
-                                    <div class="img-overlay">
-                                        <span>
-                                        <a href="{{ URL::asset('assets/images/avatar.png') }}" class="btn btn-sm btn-primary" data-popup="lightbox" height="200px" width="200px"><i class="icofont icofont-plus"></i></a>
-                                        <a href="" class="btn btn-sm btn-primary"><i class="icofont icofont-link-alt"></i></a> 
-                                        </span>
-                                    </div>
-                                  
+                                <img id="myImg" class="img-fluid img-circle" src="{{asset((isset($employee) && $employee->image!='')?'uploads/'.$employee->image:'assets/images/avatar.png')}}"  height="200px" width="200px">
+                                <div class="img-overlay">
+                                    <span>
+                                    <a href="{{ URL::asset('assets/images/avatar.png') }}" class="btn btn-sm btn-primary" height="200px" width="200px"></a>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -113,14 +107,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col">
-                        {!! Form::file('image', array('class' => 'image')) !!}
+                        {!! Form::file('image', array('class' => 'image form-control')) !!}
                     </div>
                 </div>
-            </div>
-                     <div class="form-group">
-                        {{ Form::hidden('status', 'ACTIVE') }}
-                        </div>
-
+                <div class="form-group">
+                    {{ Form::hidden('status', 'ACTIVE') }}
                 </div>
             </div>
         </div>
@@ -162,11 +153,10 @@
         </div>
     </div>
 </div>
-
-
-
-
 @endsection
+
+
+
 
 
 @section('custom_page_script')
