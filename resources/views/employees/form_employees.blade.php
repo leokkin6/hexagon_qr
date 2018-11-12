@@ -133,8 +133,12 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('hash_value', 'Hashed Value:') }}
-                    {{ Form::text('hash_value', null, array('class' => 'form-control', 'readonly','id'=>'txt_QRHash')) }}
-                </div>  
+                    {{ Form::text('hash_value', null, array('class' => 'form-control','id'=>'txt_QRHash', 'readonly')) }}
+                </div> 
+                <div class="form-group">
+                    {{ Form::label('qr_link', 'Link:') }}
+                    {{ Form::text('qr_link', null, array('class' => 'form-control','id'=>'txt_qrLink', 'readonly')) }}
+                </div>   
                 {!! Form::close() !!}
                 <!-- End of Information Forms -->
             </div>
@@ -168,12 +172,11 @@
     $(document).ready(function () {
      $('#txt_employeeID,#txt_LastName,#txt_Department').keyup(function() {
         var qrvalue = $('#txt_QRValue').val();
-        var hashed_value = generate_qrcode(qrvalue);
-            
-            $('#txt_QRValue').val($('#txt_employeeID').val()+'-'+$('#txt_LastName').val()+'-'+$('#txt_Department').val());
-            $('#txt_QRHash').val(hashed_value);
+
+        $('#txt_QRValue').val($('#txt_employeeID').val()+'-'+$('#txt_LastName').val()+'-'+$('#txt_Department').val());
+        generate_qrcode(qrvalue);
         });
-    });
+    }); 
 
     function generate_qrcode(qrValue){
         $.ajax({
@@ -181,12 +184,14 @@
             url: '/qr/generator/getQRValueReg',
             data: {qrValue:qrValue},
             success: function(data){
+                $('#txt_qrLink').val('eov.hgc.com/'+data.codeHash);
                 $('#QRresult').html(data.code);
                 $('#txt_QRHash').val(data.codeHash);
+                
             }
         });
     }
- 
+      
 </script>
 
 <script type="text/javascript">
