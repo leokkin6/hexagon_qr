@@ -95,12 +95,7 @@
                     <div class="col">
                         <div class="card rounded-card user-card">
                             <div class="card-block">
-                                <img id="myImg" class="img-fluid img-circle" src="{{asset((isset($employee) && $employee->image!='')?'uploads/'.$employee->image:'assets/images/avatar.png')}}"  height="200px" width="200px">
-                                <div class="img-overlay">
-                                    <span>
-                                    <a href="{{ URL::asset('assets/images/avatar.png') }}" class="btn btn-sm btn-primary" height="200px" width="200px"></a>
-                                    </span>
-                                </div>
+                                <img id="myImg" class="img-fluid img-circle" src="{{asset((isset($employee) && $employee->image!='')?'uploads/'.$employee->image:'assets/images/avatar.png')}}">
                             </div>
                         </div>
                     </div>

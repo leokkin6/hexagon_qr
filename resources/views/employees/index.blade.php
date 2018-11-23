@@ -87,27 +87,6 @@
                 @endforeach
 
                 </tbody>
-
-                {{-- <tfoot>
-                    <tr>
-                        <th>Employee Id</th>
-                        <th>Title</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Department</th>
-                        <th>Unit</th>
-                        <th>Division</th>
-                        <th>Position</th>
-                        <th>Start date</th>
-                        <th>Email Address</th>
-                        <th>Image</th>
-                        <th>QR Vaue</th>
-                        <th>Hash Value</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot> --}}
             </table>
         </div>
     </div>

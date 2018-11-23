@@ -5,6 +5,7 @@ use App\Employee;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+Use Storage;
 
 class EmployeeController extends Controller
 {
@@ -94,6 +95,7 @@ return redirect('/employees/profile');
 
     public function update(Request $request, $id)
     {
+
         if ($request->isMethod('get'))
             return view('employees.form_employees', ['employee' => Employee::find($id)]);
         else {
@@ -108,38 +110,43 @@ return redirect('/employees/profile');
                 'unit'=> 'required|max:50',
                 'division'=> 'required|max:50',
                 'position'=> 'required|max:50',
-                'email'=> 'required|unique:employees|max:50',
-                'image' => 'required',
+                'email'=> 'required|sometimes:employees|max:50',
+                'image' => 'required|sometimes',
                 'qr_value'=> 'required',
                 'hash_value'=>'required',
                 'status'=>'required'
             ];
             $this->validate($request, $rules);
             $employee = Employee::find($id);
+
             if ($request->hasFile('image')) {
+                // add new photo
                 $dir = 'uploads/';
                 $extension = strtolower($request->file('image')->getClientOriginalExtension()); // get image extension
                 $fileName = str_random() . '.' . $extension; // rename image
                 $request->file('image')->move($dir, $fileName);
+                $oldFileName = $employee->image;    
+
+                // update new photo & info
                 $employee->image = $fileName;
+                $employee->emp_id = $request->emp_id;
+                $employee->title = $request->title;
+                $employee->last_name = $request->last_name;
+                $employee->first_name = $request->first_name;
+                $employee->is_user = $request->is_user;
+                $employee->middle_name = $request->middle_name;
+                $employee->department = $request->department;
+                $employee->unit = $request->unit;
+                $employee->division = $request->division;
+                $employee->position = $request->position;
+                $employee->email = $request->email;
+
+                //delete old photo
+                Storage::delete($oldFileName);
             }
 
             $employee->save();
 
-
-            $employee->emp_id = $request->emp_id;
-            $employee->title = $request->title;
-            $employee->last_name = $request->last_name;
-            $employee->first_name = $request->first_name;
-            $employee->is_user = $request->is_user;
-            $employee->middle_name = $request->middle_name;
-            $employee->department = $request->department;
-            $employee->unit = $request->unit;
-            $employee->division = $request->division;
-            $employee->position = $request->position;
-            $employee->email = $request->email;
-            $employee->image = $request->image;
-            $employee->save();
             return redirect('/employees/profile');
             
         }
